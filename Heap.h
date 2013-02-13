@@ -107,13 +107,16 @@ T* Heap<T>::insert(T item){
 
 /*
  * Technically I should handle the eventuallity of overflowing my size
+ * This method is just kinda worthless though. I need to add a lot to handle
+ * this. I cannot free memory I did not create yet if I use this my code tries
+ * to free memory it cannot.
  */
-template<class T>
-void Heap<T>::insert(T* item){
-    heapAry_pp[size + 1] = item;
-    size += 1;                      // update size
-    *(int*)heapAry_pp[0] += 1;      // update size of managed memory
-}
+//template<class T>
+//void Heap<T>::insert(T* item){
+//    heapAry_pp[size + 1] = item;
+//    size += 1;                      // update size
+//    *(int*)heapAry_pp[0] += 1;      // update size of managed memory
+//}
 
 template<class T>
 void Heap<T>::percolateUp(int ndx){

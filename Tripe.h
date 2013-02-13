@@ -23,12 +23,6 @@ class Tripe {
     StudentNode** curList;
     
 public:
-//    void insert(StudentNode node){
-//        minHeap.insert(node);
-//        nameLogger.insert(&node, node.getName());
-//    };
-    
-    
     // These are the the req'ed method sigs
     void insert(string name, int grade);
     void search(string findMatches);

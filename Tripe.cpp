@@ -67,6 +67,7 @@ void Tripe::initialize(string filePath){
             insert(name, atoi(score.c_str()));
         }
     }
+    delete[] fileData;
 }
 
 /*
