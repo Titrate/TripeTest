@@ -9,7 +9,7 @@
 #include <iostream>
 #include "Tripe.h"
 #include "StudentNode.h"
-#include "FileOps.h"
+#include "TxtFile.h"
 
 using namespace std;
 
@@ -80,73 +80,14 @@ using namespace std;
 
 int main(int argc, const char * argv[]){
     Tripe myTripe;
+    string file = "/Users/titrate/Workspace/cpp/DansTemplates/pa2_test.txt";
     
-    StudentNode mariam;
-    StudentNode mark;
-    StudentNode mallocs;
-    
-    StudentNode** list;
-    StudentNode* minEntry;
-    
-    string** fileData = new string *[100];
-    
-    TxtFile file;
-    
-    int filesize = file.readDataToString("/Users/titrate/Workspace/cpp/DansTemplates/student.txt", fileData);
-    
-    cout << filesize << endl;
-    
-    for (int i =0; i < filesize; i++)
-        cout << *fileData[i] << endl;
-    
-    string name;
-    string score;
-    unsigned long splitSpot;
-    
-    for (int j = 0; j < filesize; j++){
-        splitSpot = fileData[j]->find("\t");
-        name = fileData[j]->substr(0, splitSpot);
-        score = fileData[j]->substr(splitSpot+1j);
-        cout << name << ":" << score << endl;
-    }
-    
-    mariam.setName("MariamLamifi");
-    mariam.setScore(97);
-    
-    mark.setName("MarkMullin");
-    mark.setScore(45);
-    
-    mallocs.setName("Malloc");
-    mallocs.setScore(10);
-    
-    
-    myTripe.insert(mariam);
-    myTripe.insert(mark);
-    myTripe.insert(mallocs);
-    
-    list = myTripe.find("ma");
-    
-    int count = 0;
-    while (list[count] != NULL){
-        cout << list[count]->getName() << endl;
-        cout << list[count]->getScore() << endl;
-        count += 1;
-    }
-    
-    
-    list = myTripe.find("be");
-    
-    count = 0;
-    while (list[count] != NULL){
-        cout << list[count]->getName() << endl;
-        cout << list[count]->getScore() << endl;
-        count += 1;
-    }
-    
-    minEntry = myTripe.findMin();
-    
-    cout << minEntry->getName() << endl;
-    cout << minEntry->getScore() << endl;
+    myTripe.initialize(file);
+    myTripe.search("jo");
+    myTripe.search("ma");
+    myTripe.search("e");
+    myTripe.search("d");
+    myTripe.findMin();
     
     return EXIT_SUCCESS;
 }

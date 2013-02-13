@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Daniel Guimaraes. All rights reserved.
 //
 
-#include "FileOps.h"
+#include "TxtFile.h"
 
 int TxtFile::readDataToString(string filePath, string **dataAry){
     string* line;

@@ -56,7 +56,7 @@ public:
         }
     }
     
-    void insert(T item);                // Insert item into memory
+    T* insert(T item);                // Insert item into memory
     void insert(T* item);
     T* deleteMin();                     // Remove head item
     T* getMin(){return (T*) heapAry_pp[ROOT];}
@@ -87,7 +87,7 @@ void Heap<T>::resize(){
 }
 
 template<class T>
-void Heap<T>::insert(T item){
+T* Heap<T>::insert(T item){
     T* temp_p;
     if (size == maxArySize){                 // We need to allocate memory for storage
         resize();
@@ -102,6 +102,7 @@ void Heap<T>::insert(T item){
     *temp_p = item;
     size += 1;
     percolateUp(size);
+    return temp_p;
 }
 
 /*

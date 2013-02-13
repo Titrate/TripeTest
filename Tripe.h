@@ -14,6 +14,7 @@
 #include "Trie.h"
 #include "Heap.h"
 #include "StudentNode.h"
+#include "TxtFile.h"
 
 
 class Tripe {
@@ -22,18 +23,20 @@ class Tripe {
     StudentNode** curList;
     
 public:
-    void insert(StudentNode node){
-        minHeap.insert(node);
-        nameLogger.insert(&node, node.getName());
-    };
+//    void insert(StudentNode node){
+//        minHeap.insert(node);
+//        nameLogger.insert(&node, node.getName());
+//    };
     
-    StudentNode** find(string findMatches){
-        return nameLogger.find(findMatches);
-    }
     
-    StudentNode* findMin(){
-        return minHeap.getMin();
-    }
+    // These are the the req'ed method sigs
+    void insert(string name, int grade);
+    void search(string findMatches);
+    void findMin();
+    void initialize(string filePath);
+    
+    //EC
+    void deleteMin();
 };
 
 #endif /* defined(__DansTemplates__Tripe__) */
