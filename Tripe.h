@@ -20,7 +20,7 @@
 class Tripe {
     Heap<StudentNode> minHeap;
     Trie<StudentNode> nameLogger;
-    StudentNode** curList;
+//    StudentNode** curList;
     
 public:
     // These are the the req'ed method sigs
@@ -28,6 +28,7 @@ public:
     void search(string findMatches);
     void findMin();
     void initialize(string filePath);
+    int empty(){return minHeap.empty();}
     
     //EC
     void deleteMin();

@@ -8,8 +8,3 @@
 
 #include "StudentNode.h"
 
-int StudentNode::compare(StudentNode* isBigger){
-//    cout << this->score - isBigger->score << endl;
-    return (this->score - isBigger->score);
-}
-

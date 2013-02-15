@@ -11,6 +11,7 @@
 #include "StudentNode.h"
 #include "TxtFile.h"
 //#include "Heap.h"
+//#include "Trie.h"
 
 using namespace std;
 
@@ -81,12 +82,27 @@ using namespace std;
 
 int main(int argc, const char * argv[]){
     Tripe myTripe;
-    string file = "/Users/titrate/Workspace/cpp/DansTemplates/pa2_test.txt";
+    string file = "pa2_test.txt";
     
     myTripe.initialize(file);
+    
+    myTripe.findMin();
+    while (! myTripe.empty()){
+        myTripe.deleteMin();
+        myTripe.findMin();
+    }
+    
+    myTripe.insert("stevenwilson", 45);
+    myTripe.findMin();
+    myTripe.insert("stevenowens", 5);
+    myTripe.findMin();
+    myTripe.insert("stellacliven", 102);
     myTripe.findMin();
     myTripe.deleteMin();
     myTripe.findMin();
+    myTripe.deleteMin();
+    myTripe.findMin();
+    myTripe.deleteMin();
     
     return EXIT_SUCCESS;
 }

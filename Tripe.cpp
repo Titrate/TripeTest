@@ -53,7 +53,7 @@ void Tripe::initialize(string filePath){
     TxtFile file;
     string** fileData = new string *[1000];
     
-    int filesize = file.readDataToString("/Users/titrate/Workspace/cpp/DansTemplates/pa2_test.txt", fileData);
+    int filesize = file.readDataToString(filePath, fileData);
     
     string name;
     string score;

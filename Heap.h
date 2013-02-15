@@ -60,6 +60,12 @@ public:
     void insert(T* item);
     T* deleteMin();                     // Remove head item
     T* getMin(){return (T*) heapAry_pp[ROOT];}
+    int empty(){
+        if (size > 0)
+            return 0;
+        else
+            return 1;
+    }
     
 private:
     void handleData(T* data);           // This handles the data array passed in from the user
@@ -68,7 +74,8 @@ private:
     void percolateUp(int ndx);          // Like donw, the just oposite direction
     void swap(int ndx1, int ndx2);      // Swap two pointers
     int checkChildren(int ndx);         // Return ndx of smallest node in group
-    void resize();                      // Resize if we grow too big.          
+    void resize();                      // Resize if we grow too big.
+
 };
 
 #endif /* defined(__DansTemplates__HeapTree__) */

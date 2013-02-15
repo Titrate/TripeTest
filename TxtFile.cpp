@@ -14,7 +14,7 @@ int TxtFile::readDataToString(string filePath, string **dataAry){
     int count = 0;
     
     //Surround in try catch block and send back a meaningful message
-    file.open(filePath); 
+    file.open(filePath.c_str());
     if (file.is_open())
         while(!file.eof()) {
             line = new string;

@@ -27,7 +27,7 @@ public:
     
     int getScore(){return score;}
     void setScore(int score){this->score = score;}
-    int compare(StudentNode* isBigger);
+    int compare(StudentNode* isBigger){return (this->score - isBigger->score);}
 };
 
 #endif /* defined(__DansTemplates__TripeNode__) */
