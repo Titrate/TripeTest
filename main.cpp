@@ -85,19 +85,25 @@ int main(int argc, const char * argv[]){
     string file = "pa2_test.txt";
     
     myTripe.initialize(file);
-    
+
+    cout << "Search w" << endl;
+    myTripe.search("w");
+    cout << "Search za" << endl;
+    myTripe.search("za");
+    cout << "List and remove nodes in order" << endl;
     myTripe.findMin();
     while (! myTripe.empty()){
         myTripe.deleteMin();
         myTripe.findMin();
     }
     
+    cout << "Add new nodes, search for them, remove and list them" << endl;
     myTripe.insert("stevenwilson", 45);
     myTripe.findMin();
     myTripe.insert("stevenowens", 5);
     myTripe.findMin();
     myTripe.insert("stellacliven", 102);
-    myTripe.findMin();
+    myTripe.search("st");
     myTripe.deleteMin();
     myTripe.findMin();
     myTripe.deleteMin();
