@@ -64,7 +64,7 @@ template<class T>
 TrieNode<T>* Trie<T>::followString(string toFollow){
     TrieNode<T>* temp = root;
     int ndx;
-    for (int i = 0; i < toFollow.length(); i++){
+    for (unsigned int i = 0; i < toFollow.length(); i++){
         ndx = tolower(toFollow[i]) - 'a';
         temp = temp->getChild(ndx);
         if (temp == NULL)
