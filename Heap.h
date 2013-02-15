@@ -121,7 +121,7 @@ T* Heap<T>::insert(T item){
 template<class T>
 void Heap<T>::percolateUp(int ndx){
     while (ndx/2 > 0){
-        if ((*(T*)heapAry_pp[ndx]).compare(*(T*)heapAry_pp[ndx/2]) < 0){
+        if ((*(T*)heapAry_pp[ndx]).compare((T*)heapAry_pp[ndx/2]) < 0){
             swap(ndx, ndx/2);
             ndx /= 2;
         }else
@@ -179,17 +179,17 @@ void Heap<T>::percolateDown(int ndx){
 template<class T>
 int Heap<T>::checkChildren(int ndx){
     if (ndx*2 == size){ // See the int version for info
-        if (((T*)heapAry_pp[ndx])->compare(*(T*)heapAry_pp[ndx*2])>1){
+        if (((T*)heapAry_pp[ndx])->compare((T*)heapAry_pp[ndx*2])>0){
             swap(ndx, ndx*2);
             return (ndx*2);
         }
-    } else if (((T*)heapAry_pp[ndx*2])->compare(*(T*)heapAry_pp[ndx*2+1])<1){
-        if (((T*)heapAry_pp[ndx])->compare(*(T*)heapAry_pp[ndx*2])>1){
+    } else if (((T*)heapAry_pp[ndx*2])->compare((T*)heapAry_pp[ndx*2+1])<0){
+        if (((T*)heapAry_pp[ndx])->compare((T*)heapAry_pp[ndx*2])>1){
             swap(ndx, ndx*2);
             return (ndx*2);
         }
     } else {
-        if (((T*)heapAry_pp[ndx])->compare(*(T*)heapAry_pp[ndx*2+1])>1){
+        if (((T*)heapAry_pp[ndx])->compare((T*)heapAry_pp[ndx*2+1]) > 0){
             swap(ndx, ndx*2+1);
             return (ndx*2+1);
         }

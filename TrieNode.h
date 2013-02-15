@@ -32,11 +32,15 @@ public:
     }
     
     void incrementWeight(){this->weight += 1;}
+    void decrementWeight(){this->weight -= 1;}
+    
     T* getObj(){return this->obj_p;}
+    
     bool hasObj(){return this->hasObjPtr;}
     
     TrieNode<T>* getChild(int ndx){return children_pp[ndx];}
     TrieNode<T>* addChild(int ndx);
+    
     void setObj(T* obj){
         obj_p = obj;
         hasObjPtr = true;

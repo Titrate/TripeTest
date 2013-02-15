@@ -30,6 +30,8 @@ public:
     void insert(T* obj, string name);
     TrieNode<T>* followString(string toFollow);
     void xplorSubPaths(TrieNode<T>* node, int& insertNdx);
+    void deleteName(string name);
+    void traceDelete(TrieNode<T>* next_p, string* name, int* ndx, int* nameLen);
 };
 
 #endif /* defined(__DansTemplates__Trie__) */
@@ -90,7 +92,28 @@ void Trie<T>::xplorSubPaths(TrieNode<T>* node, int& insertNdx){
                 xplorSubPaths(nextChild, insertNdx);
         }
     }
-    
+}
+
+template<class T>
+void Trie<T>::deleteName(string name){
+    TrieNode<T>* next_p = root;
+    int ndx = 0;
+    int nameLen = (int) name.length();
+    traceDelete(next_p, &name, &ndx, &nameLen);
+}
+
+template<class T>
+void Trie<T>::traceDelete(TrieNode<T>* next_p, string* name, int* nameNdx, int* nameLen){
+    if (next_p != NULL){
+        TrieNode<T>* current_p = next_p;
+        if (nameNdx < nameLen){
+            int letter = tolower((*name)[*nameNdx]) - 'a';
+            next_p = current_p->getChild(letter);
+            *nameNdx += 1;
+            traceDelete(next_p, name, nameNdx, nameLen);
+        }
+        current_p->decrementWeight();
+    }
 }
 
 

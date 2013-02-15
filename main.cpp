@@ -10,6 +10,7 @@
 #include "Tripe.h"
 #include "StudentNode.h"
 #include "TxtFile.h"
+//#include "Heap.h"
 
 using namespace std;
 
@@ -83,10 +84,8 @@ int main(int argc, const char * argv[]){
     string file = "/Users/titrate/Workspace/cpp/DansTemplates/pa2_test.txt";
     
     myTripe.initialize(file);
-    myTripe.search("jo");
-    myTripe.search("ma");
-    myTripe.search("e");
-    myTripe.search("d");
+    myTripe.findMin();
+    myTripe.deleteMin();
     myTripe.findMin();
     
     return EXIT_SUCCESS;

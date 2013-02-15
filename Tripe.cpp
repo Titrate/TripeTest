@@ -75,5 +75,7 @@ void Tripe::initialize(string filePath){
  * Delete min, easy for heap, Less easy in Trie (not difficult though)
  */
 void Tripe::deleteMin(){
-    
+    StudentNode* deleted = minHeap.deleteMin();
+    nameLogger.deleteName(deleted->getName());
 }
+
