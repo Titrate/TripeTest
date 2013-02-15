@@ -82,7 +82,11 @@ using namespace std;
 
 int main(int argc, const char * argv[]){
     Tripe myTripe;
-    string file = "pa2_test.txt";
+    
+    myTripe.deleteMin();
+    myTripe.findMin();
+    
+    string file = "/Users/titrate/Workspace/cpp/DansTemplates/DansTemplates/pa2_test.txt";
     
     myTripe.initialize(file);
 
@@ -91,19 +95,19 @@ int main(int argc, const char * argv[]){
     cout << "Search za" << endl;
     myTripe.search("za");
     cout << "List and remove nodes in order" << endl;
-    myTripe.findMin();
     while (! myTripe.empty()){
-        myTripe.deleteMin();
         myTripe.findMin();
+        myTripe.deleteMin();
     }
+    
+    myTripe.findMin();
     
     cout << "Add new nodes, search for them, remove and list them" << endl;
     myTripe.insert("stevenwilson", 45);
-    myTripe.findMin();
     myTripe.insert("stevenowens", 5);
-    myTripe.findMin();
     myTripe.insert("stellacliven", 102);
     myTripe.search("st");
+    myTripe.findMin();
     myTripe.deleteMin();
     myTripe.findMin();
     myTripe.deleteMin();

@@ -40,10 +40,11 @@ void Tripe::search(string findMatches){
  * Print min value
  */
 void Tripe::findMin(){
-    StudentNode* min = minHeap.getMin();
-    if (min != NULL)
-        cout << min->getName() <<
-             "\t" << min->getScore() << endl;
+    if (! minHeap.empty()){
+        StudentNode* min = minHeap.getMin();
+        if (min != NULL)
+            cout << min->getName() << "\t" << min->getScore() << endl;
+    }
 }
 
 /*
@@ -75,7 +76,9 @@ void Tripe::initialize(string filePath){
  * Delete min, easy for heap, Less easy in Trie (not difficult though)
  */
 void Tripe::deleteMin(){
-    StudentNode* deleted = minHeap.deleteMin();
-    nameLogger.deleteName(deleted->getName());
+    if (! minHeap.empty()){
+        StudentNode* deleted = minHeap.deleteMin();
+        nameLogger.deleteName(deleted->getName());
+    }
 }
 

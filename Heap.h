@@ -60,6 +60,7 @@ public:
     void insert(T* item);
     T* deleteMin();                     // Remove head item
     T* getMin(){return (T*) heapAry_pp[ROOT];}
+    
     int empty(){
         if (size > 0)
             return 0;
