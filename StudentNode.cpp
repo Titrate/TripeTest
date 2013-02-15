@@ -6,5 +6,5 @@
 //  Copyright (c) 2013 Daniel Guimaraes. All rights reserved.
 //
 
-#include "StudentNode.h"
+#include "studentnode.h"
 

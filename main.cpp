@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
-#include "Tripe.h"
-#include "StudentNode.h"
-#include "TxtFile.h"
+#include "tripe.h"
+#include "studentnode.h"
+#include "myfile.h"
 //#include "Heap.h"
 //#include "Trie.h"
 
@@ -89,11 +89,12 @@ int main(int argc, const char * argv[]){
     string file = "/Users/titrate/Workspace/cpp/DansTemplates/DansTemplates/pa2_test.txt";
     
     myTripe.initialize(file);
+    myTripe.initialize(file);
 
     cout << "Search w" << endl;
     myTripe.search("w");
-    cout << "Search za" << endl;
-    myTripe.search("za");
+    cout << "Search b" << endl;
+    myTripe.search("b");
     cout << "List and remove nodes in order" << endl;
     while (! myTripe.empty()){
         myTripe.findMin();

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Daniel Guimaraes. All rights reserved.
 //
 
-#include "Tripe.h"
+#include "tripe.h"
 
 
 /*
@@ -51,24 +51,26 @@ void Tripe::findMin(){
  * Load a file of name grade pairs (separated with '\t') into the tripe
  */
 void Tripe::initialize(string filePath){
-    TxtFile file;
-    string** fileData = new string *[1000];
-    
-    int filesize = file.readDataToString(filePath, fileData);
-    
-    string name;
-    string score;
-    unsigned long splitSpot;
-    
-    for (int j = 0; j < filesize; j++){
-        splitSpot = fileData[j]->find("\t");
-        if (splitSpot != string::npos){
-            name = fileData[j]->substr(0, splitSpot);
-            score = fileData[j]->substr(splitSpot+1);
-            insert(name, atoi(score.c_str()));
+    if (minHeap.empty()){
+        MyFile file;
+        string** fileData = new string *[1000];
+        
+        int filesize = file.readDataToString(filePath, fileData);
+        
+        string name;
+        string score;
+        unsigned long splitSpot;
+        
+        for (int j = 0; j < filesize; j++){
+            splitSpot = fileData[j]->find("\t");
+            if (splitSpot != string::npos){
+                name = fileData[j]->substr(0, splitSpot);
+                score = fileData[j]->substr(splitSpot+1);
+                insert(name, atoi(score.c_str()));
+            }
         }
+        delete[] fileData;
     }
-    delete[] fileData;
 }
 
 /*

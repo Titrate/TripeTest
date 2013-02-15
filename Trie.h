@@ -10,7 +10,7 @@
 #define __DansTemplates__Trie__
 
 #include <iostream>
-#include "TrieNode.h"
+#include "trienode.h"
 
 using namespace std;
 
@@ -41,7 +41,7 @@ void Trie<T>::insert(T* obj, string name){
     int insertNdx;          // The index to insert into the nodes child arrray
     char curLetter;         // The current letter being inserted
     TrieNode<T>* curNode = root;   // The node we are inserting into
-    for (int i = 0; i < name.length(); i++){
+    for (unsigned int i = 0; i < name.length(); i++){
         curLetter = tolower(name[i]);
         insertNdx = curLetter - 'a';
         curNode = curNode->addChild(insertNdx);

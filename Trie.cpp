@@ -6,4 +6,4 @@
 //  Copyright (c) 2013 Daniel Guimaraes. All rights reserved.
 //
 
-#include "Trie.h"
+#include "trie.h"

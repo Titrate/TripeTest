@@ -11,10 +11,10 @@
 
 #include <iostream>
 
-#include "Trie.h"
-#include "Heap.h"
-#include "StudentNode.h"
-#include "TxtFile.h"
+#include "trie.h"
+#include "heap.h"
+#include "studentnode.h"
+#include "myfile.h"
 
 
 class Tripe {
