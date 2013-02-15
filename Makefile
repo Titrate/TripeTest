@@ -1,6 +1,6 @@
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++0x
 
-OBJS =	TrieNode.o Trie.o Tripe.o TxtFile.o Heap.o main.o
+OBJS =	trienode.o trie.o tripe.o myfile.o heap.o main.o
 
 LIBS =
 
