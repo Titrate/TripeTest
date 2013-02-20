@@ -86,7 +86,7 @@ int main(int argc, const char * argv[]){
     myTripe.deleteMin();
     myTripe.findMin();
     
-    string file = "/Users/titrate/Workspace/cpp/DansTemplates/DansTemplates/pa2_test.txt";
+    string file = "pa2_test.txt";
     
     myTripe.initialize(file);
     myTripe.initialize(file);

@@ -107,6 +107,7 @@ void Trie<T>::traceDelete(TrieNode<T>* next_p, string* name, int* nameNdx, int* 
     if (next_p != NULL){
         TrieNode<T>* current_p = next_p;
         if (nameNdx < nameLen){
+            if (nameNdx == nameLen - 1) next_p->deleteObj();
             int letter = tolower((*name)[*nameNdx]) - 'a';
             next_p = current_p->getChild(letter);
             *nameNdx += 1;

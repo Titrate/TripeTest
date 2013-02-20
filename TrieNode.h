@@ -45,6 +45,10 @@ public:
         obj_p = obj;
         hasObjPtr = true;
     }
+
+    void deleteObj(){
+        hasObjPtr = false;
+    }
     
     bool hasChildren(){
         return (weight > 0);
